@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><: $title :></title>
+  </head>
+  <body>
+    <div>
+      <h1>Table of Contents</h1>
+
+      <h2>Mods</h2>
+      <ul>
+        : for $mods -> $mod {
+          <li><a href="#<: $mod.slug :>"><: $mod.title :> -- <: $mod.author :></a></li>
+        : }
+      </ul>
+
+      <h2>Other News</h2>
+      <ul>
+        : for $other -> $post {
+          <li><a href="#<: $post.slug :>"><: $post.title :> -- <: $post.author :></a></li>
+        : }
+      </ul>
+
+      : for $content -> $post {
+        <: $post :>
+      : }
+  </body>
+</html>
